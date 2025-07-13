@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya Addalapudi | Java Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #2C3E50;
+        }
+        .active-tab {
+            border-color: #E07A5F !important;
+            color: #E07A5F !important;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 400px;
+            width: 100%;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="home" class="py-6 md:py-10">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Kavya Addalapudi</h1>
+            <p class="mt-2 text-xl md:text-2xl text-[#E07A5F] font-medium">Full-Stack Java Developer</p>
+            <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                A results-driven developer with a Master's degree and a passion for building scalable, high-impact applications. Specializing in full-stack Java solutions and modern DevOps practices to deliver robust and efficient products.
+            </p>
+            <div class="mt-6 flex justify-center items-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-[#E07A5F] transition duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-[#E07A5F] transition duration-300">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-2.08-1.55-2.08-.95 0-1.45.68-1.45 2.08V19h-3v-9h2.8v1.32h.04c.4-.7 1.35-1.32 2.96-1.32 3.17 0 3.96 2.08 3.96 4.79z"/></svg>
+                </a>
+                 <a href="mailto:kaddalapudi@gmail.com" class="text-gray-500 hover:text-[#E07A5F] transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        
+        <section id="achievements" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Key Achievements</h2>
+            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">Driving tangible results and measurable improvements through technology.</p>
+            <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <p class="text-4xl font-bold text-[#E07A5F]">30%</p>
+                    <p class="mt-2 text-gray-600">Decrease in Downtime</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <p class="text-4xl font-bold text-[#E07A5F]">40%</p>
+                    <p class="mt-2 text-gray-600">Faster Deployments</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <p class="text-4xl font-bold text-[#E07A5F]">25%</p>
+                    <p class="mt-2 text-gray-600">Fewer Post-Release Bugs</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <p class="text-4xl font-bold text-[#E07A5F]">20%</p>
+                    <p class="mt-2 text-gray-600">Faster Feature Delivery</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Career Timeline</h2>
+             <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">A journey of growth, contribution, and technical leadership.</p>
+            <div class="mt-10 md:flex md:space-x-12">
+                <div class="md:w-1/3">
+                    <ul id="timeline-tabs" class="space-y-4">
+                        <li>
+                            <button data-target="job-1" class="w-full text-left p-4 font-semibold border-l-4 transition-colors duration-300 active-tab">Java Developer @ State of MN</button>
+                        </li>
+                        <li>
+                            <button data-target="job-2" class="w-full text-left p-4 font-semibold border-l-4 border-gray-200 hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors duration-300">DevOps Intern @ Xperts Info Tech</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-2/3 mt-8 md:mt-0">
+                    <div id="job-1" class="timeline-content space-y-3 text-gray-700"></div>
+                    <div id="job-2" class="timeline-content hidden space-y-3 text-gray-700"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Technical Skills</h2>
+            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">A versatile skill set for building modern, robust software.</p>
+            <div class="mt-10 chart-container">
+                <canvas id="skillsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="projects" class="py-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Projects Portfolio</h2>
+            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">Demonstrating practical application of skills through impactful projects.</p>
+            <div id="project-list" class="mt-10 grid md:grid-cols-2 gap-8">
+            </div>
+        </section>
+
+        <section id="education" class="py-12">
+             <h2 class="text-3xl font-bold text-center text-gray-800">Education</h2>
+             <div class="mt-8 max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-sm text-center">
+                 <h3 class="text-xl font-bold text-gray-800">Master of Science, Computer Science</h3>
+                 <p class="text-gray-600">University of Central Missouri, Graduated: May 2023</p>
+                 <hr class="my-4">
+                 <h3 class="text-xl font-bold text-gray-800">Bachelor of Science, Computer Science</h3>
+                 <p class="text-gray-600">Sri Padmavati Mahila Visvavidyalayam, Graduated: May 2021</p>
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-12 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Kavya Addalapudi. All rights reserved.</p>
+             <p class="text-sm text-gray-400 mt-1">Interactive portfolio built with passion and code.</p>
+        </div>
+    </footer>
+    
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-full overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                    <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800">&times;</button>
+                </div>
+                <div id="modal-content" class="mt-4 prose max-w-none text-gray-700"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const resumeData = {
+            experience: [
+                {
+                    id: 'job-1',
+                    title: 'Java Developer @ State of MN',
+                    period: 'July 2023 – Present',
+                    details: [
+                        'Engineered and optimized mission-critical, enterprise-level Java applications, significantly boosting overall system efficiency by 15-20% through code refactoring and algorithm optimization.',
+                        'Designed and implemented highly scalable RESTful APIs for microservices communication and external integrations, enhancing data exchange efficiency by 35% and processing large volumes of data seamlessly.',
+                        'Spearheaded full-stack development initiatives, building robust backend services with Java and Spring Boot, and crafting intuitive, responsive frontend interfaces using JavaScript, HTML, and CSS, which directly improved user engagement by 10-15%.',
+                        'Architected and implemented robust content management solutions leveraging FileNet, streamlining document storage, retrieval, and automating critical business processes for improved operational efficiency by 20%.',
+                        'Developed and maintained secure, enterprise-wide user authentication and authorization mechanisms via LDAP, significantly strengthening application security posture and simplifying access controls, reducing authentication time by 15%.',
+                        'Led rigorous code review sessions, enforcing architectural standards, promoting best practices, and actively mentoring junior developers, which contributed to elevating overall code quality and maintainability and reducing post-release bugs by 25%.',
+                        'Drove Agile methodologies (Scrum/Kanban) adoption, actively participating in daily stand-ups, sprint planning, and retrospectives, facilitating rapid iteration and consistently delivering incremental value, increasing team velocity by 15%.',
+                        'Conducted in-depth root cause analysis and resolved complex technical issues in critical production systems, proactively optimizing application performance and ensuring system stability, which decreased downtime by 30%.'
+                    ]
+                },
+                {
+                    id: 'job-2',
+                    title: 'DevOps Intern @ Previous Company',
+                    period: 'Jan 2023 – May 2023',
+                    details: [
+                        'Automated and optimized CI/CD pipelines using tools like Jenkins, significantly contributing to faster and more reliable software build, testing, and deployment processes, slashing deployment time by 40%.',
+                        'Gained practical experience with Git for distributed version control, managing complex branching and merging strategies, and facilitating collaborative development through pull requests.',
+                        'Monitored application performance and infrastructure health using tools like Prometheus and Grafana, identifying bottlenecks and proposing data-driven solutions that improved operational efficiency.',
+                        'Collaborated closely with development teams to troubleshoot integration issues, improve documentation, and streamline release cycles, enhancing overall software delivery speed and reliability.'
+                    ]
+                }
+            ],
+            projects: [
+                {
+                    title: "E-commerce Platform Backend",
+                    content: `
+                        <p>Developed a scalable backend for an e-commerce application using Spring Boot, handling critical functionalities like user authentication, product catalog management, and order processing.</p>
+                        <p class="mt-2">Implemented robust RESTful APIs to support seamless communication for mobile and web clients, focusing on performance and data integrity.</p>
+                        <h4 class="font-semibold mt-4">Key Features:</h4>
+                        <ul class="list-disc list-inside">
+                            <li>Integrated with Stripe API for secure payment processing.</li>
+                            <li>Designed database schema for optimal query performance.</li>
+                        </ul>
+                         <h4 class="font-semibold mt-4">Impact:</h4>
+                         <p>Improved transaction processing speed by 20% and designed to support over 10,000 concurrent users.</p>`
+                },
+                {
+                    title: "Real-time Collaborative Whiteboard",
+                    content: `
+                        <p>Built a full-stack real-time collaborative whiteboard application with a Java Spring Boot backend and a React frontend, enabling multiple users to interact simultaneously.</p>
+                        <p class="mt-2">Implemented WebSocket communication for instant updates and synchronization across client sessions.</p>
+                        <h4 class="font-semibold mt-4">Key Features:</h4>
+                        <ul class="list-disc list-inside">
+                             <li>Utilized Redis for caching real-time data to reduce latency.</li>
+                             <li>Designed an intuitive UI/UX for drawing tools and collaboration features.</li>
+                        </ul>
+                        <h4 class="font-semibold mt-4">Impact:</h4>
+                        <p>Enabled seamless real-time collaboration for teams of up to 50 members, receiving highly positive user feedback for ease of use.</p>`
+                }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineTabs = document.getElementById('timeline-tabs');
+            const timelineContents = document.querySelectorAll('.timeline-content');
+            
+            function updateExperienceContent(targetId) {
+                const jobData = resumeData.experience.find(job => job.id === targetId);
+                const contentDiv = document.getElementById(targetId);
+                if (jobData) {
+                    let html = `<h3 class="text-xl font-bold text-gray-800">${jobData.title}</h3>`;
+                    html += `<p class="font-medium text-gray-500">${jobData.period}</p>`;
+                    html += '<ul class="list-disc list-inside space-y-2 mt-2">';
+                    jobData.details.forEach(detail => {
+                        html += `<li>${detail}</li>`;
+                    });
+                    html += '</ul>';
+                    contentDiv.innerHTML = html;
+                }
+            }
+
+            timelineTabs.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON') {
+                    const targetId = e.target.dataset.target;
+
+                    timelineTabs.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('active-tab');
+                        btn.classList.add('border-gray-200');
+                    });
+                    e.target.classList.add('active-tab');
+                    e.target.classList.remove('border-gray-200');
+
+                    timelineContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    const activeContent = document.getElementById(targetId);
+                    if (activeContent) {
+                         activeContent.classList.remove('hidden');
+                    }
+                }
+            });
+            
+            updateExperienceContent('job-1');
+            resumeData.experience.forEach(job => updateExperienceContent(job.id));
+            
+            const projectList = document.getElementById('project-list');
+            const modal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            resumeData.projects.forEach((project, index) => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col';
+                projectCard.innerHTML = `
+                    <h3 class="text-xl font-bold text-gray-800">${project.title}</h3>
+                    <div class="prose prose-sm text-gray-600 mt-2 flex-grow">
+                        ${project.content.split('</p>')[0] + '</p>'}
+                    </div>
+                    <button data-index="${index}" class="mt-4 self-start text-[#E07A5F] font-semibold hover:underline">View Details →</button>
+                `;
+                projectList.appendChild(projectCard);
+            });
+
+            projectList.addEventListener('click', (e) => {
+                if(e.target.tagName === 'BUTTON') {
+                    const project = resumeData.projects[e.target.dataset.index];
+                    modalTitle.innerText = project.title;
+                    modalContent.innerHTML = project.content;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
+            });
+
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            };
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Java & Spring Boot', 'Databases (SQL)', 'Web Tech (APIs, JS)', 'DevOps (CI/CD, Docker)', 'FileNet & LDAP'],
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: [95, 85, 90, 80, 88],
+                        backgroundColor: 'rgba(224, 122, 95, 0.6)',
+                        borderColor: 'rgba(224, 122, 95, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                             grid: { display: false }
+                        },
+                        y: {
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `Proficiency: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
