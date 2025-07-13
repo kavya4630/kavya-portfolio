@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavya Addalapudi | Java Developer Portfolio</title>
+    <title>Kavya Addalapudi | Software Engineer Portfolio</title>
+    <meta name="description" content="Kavya Addalapudi's interactive portfolio showcasing full-stack software engineering, DevOps, FileNet, LDAP, and migration expertise with quantifiable achievements.">
+    <meta name="keywords" content="Software Engineer, Full-Stack, Java, DevOps, FileNet, LDAP, Spring Boot, RESTful APIs, System Design, Application Migration, Struts, Problem Solving, Portfolio">
+    <meta name="author" content="Kavya Addalapudi">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4;
-            color: #2C3E50;
+            background: linear-gradient(135deg, #F5F7FA 0%, #E0E6ED 100%); /* Subtle light grey gradient */
+            color: #333333; /* Dark charcoal for primary text */
+            line-height: 1.7; /* Improved line height for better readability */
         }
         .active-tab {
-            border-color: #E07A5F !important;
-            color: #E07A5F !important;
+            border-color: #3498DB !important; /* Professional blue accent */
+            color: #3498DB !important;
         }
         .chart-container {
             position: relative;
@@ -27,26 +31,76 @@
             width: 100%;
             max-width: 800px;
         }
+        /* Definitive fix for header overlap:
+           - html scroll-padding-top ensures smooth scroll targets are not hidden.
+           - body padding-top pushes initial content down.
+           - #top-spacing-placeholder ensures content is pushed down from the fixed nav.
+        */
+        html {
+            scroll-padding-top: 100px; /* Base for smooth scrolling */
+        }
+        body {
+            /* No padding-top on body, let the #top-spacing-placeholder handle initial offset */
+        }
+        .section-padding {
+            padding-top: 80px; /* Consistent padding for sections */
+            padding-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+            .section-padding {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+        }
+        /* Animation classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition-delay: var(--delay);
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header id="home" class="py-6 md:py-10">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Kavya Addalapudi</h1>
-            <p class="mt-2 text-xl md:text-2xl text-[#E07A5F] font-medium">Full-Stack Java Developer</p>
-            <p class="mt-4 max-w-2xl mx-auto text-gray-600">
-                A results-driven developer with a Master's degree and a passion for building scalable, high-impact applications. Specializing in full-stack Java solutions and modern DevOps practices to deliver robust and efficient products.
+    <nav class="fixed top-0 left-0 w-full bg-white bg-opacity-95 shadow-lg z-50 py-4 backdrop-blur-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-center space-x-4 md:space-x-8 text-gray-700">
+            <a href="#home" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">Home</a>
+            <a href="#about" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">About</a>
+            <a href="#achievements" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">Achievements</a>
+            <a href="#experience" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">Experience</a>
+            <a href="#skills" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">Skills</a>
+            <a href="#projects" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">Projects</a>
+            <a href="#contact" class="font-medium text-base md:text-lg hover:text-[#3498DB] transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Placeholder div to push content down from fixed nav -->
+    <div id="top-spacing-placeholder" class="h-[80px] md:h-[90px]"></div> 
+
+    <header id="home" class="relative py-16 md:py-24 bg-gradient-to-br from-[#EBF2F7] to-[#D6E0EB] text-gray-900 overflow-hidden rounded-b-xl shadow-xl">
+        <div class="container mx-auto px-6 text-center z-10 relative">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-gray-800 drop-shadow-md">Kavya Addalapudi</h1>
+            <p class="mt-4 text-2xl md:text-4xl text-[#3498DB] font-semibold tracking-wide">Software Engineer</p>
+            <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-700 leading-relaxed">
+                A highly motivated Software Engineer with a Master's degree, specializing in designing, developing, and deploying robust full-stack solutions. Proven ability to tackle complex engineering challenges, from modern microservices to legacy system migrations, ensuring high performance and reliability.
             </p>
-            <div class="mt-6 flex justify-center items-center space-x-6">
-                <a href="https://github.com/kavya4630/kavya-portfolio" class="text-gray-500 hover:text-[#E07A5F] transition duration-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+            <div class="mt-10 flex justify-center items-center space-x-8">
+                <a href="https://github.com/kavya4630" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-[#3498DB] transition duration-300 transform hover:scale-110">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/akavyaa/" class="text-gray-500 hover:text-[#E07A5F] transition duration-300">
-                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-2.08-1.55-2.08-.95 0-1.45.68-1.45 2.08V19h-3v-9h2.8v1.32h.04c.4-.7 1.35-1.32 2.96-1.32 3.17 0 3.96 2.08 3.96 4.79z"/></svg>
+                <a href="https://linkedin.com/in/akavyaa" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-[#3498DB] transition duration-300 transform hover:scale-110">
+                     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-2.08-1.55-2.08-.95 0-1.45.68-1.45 2.08V19h-3v-9h2.8v1.32h.04c.4-.7 1.35-1.32 2.96-1.32 3.17 0 3.96 2.08 3.96 4.79z"/></svg>
                 </a>
-                 <a href="mailto:kaddalapudi@gmail.com" class="text-gray-500 hover:text-[#E07A5F] transition duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                 <a href="mailto:kaddalapudi@gmail.com" class="text-gray-700 hover:text-[#3498DB] transition duration-300 transform hover:scale-110">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </a>
             </div>
         </div>
@@ -54,74 +108,111 @@
 
     <main class="container mx-auto px-6">
         
-        <section id="achievements" class="py-12">
-            <h2 class="text-3xl font-bold text-center text-gray-800">Key Achievements</h2>
-            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">Driving tangible results and measurable improvements through technology.</p>
-            <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <p class="text-4xl font-bold text-[#E07A5F]">30%</p>
-                    <p class="mt-2 text-gray-600">Decrease in Downtime</p>
+        <section id="about" class="section-padding fade-in-section" style="--delay: 0s;">
+            <h2 class="text-3xl font-bold text-center text-gray-800">About Me</h2>
+            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">My journey, passion, and what drives my approach to software development.</p>
+            <div class="mt-10 grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-xl">
+                <div class="text-gray-700 leading-relaxed">
+                    <p>As a recent Master's graduate in Computer Science, I've cultivated a deep passion for crafting robust and scalable software solutions. My academic foundation, combined with practical experience as a full-stack Software Engineer, has equipped me with a comprehensive understanding of the entire software development lifecycle, from architectural design to deployment.</p>
+                    <p class="mt-4">I thrive in environments where I can apply my problem-solving skills to complex engineering challenges, ranging from optimizing backend system performance and designing resilient microservices to building intuitive user interfaces. My expertise spans modern technologies like Spring Boot, RESTful APIs, and comprehensive DevOps practices, including CI/CD and Docker, enabling me to build efficient and maintainable applications.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <p class="text-4xl font-bold text-[#E07A5F]">40%</p>
-                    <p class="mt-2 text-gray-600">Faster Deployments</p>
-                </div>
-                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <p class="text-4xl font-bold text-[#E07A5F]">25%</p>
-                    <p class="mt-2 text-gray-600">Fewer Post-Release Bugs</p>
-                </div>
-                 <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <p class="text-4xl font-bold text-[#E07A5F]">20%</p>
-                    <p class="mt-2 text-gray-600">Faster Feature Delivery</p>
+                <div class="text-gray-700 leading-relaxed">
+                    <p>Furthermore, I possess a strong aptitude for working with existing systems, including maintaining and enhancing applications built on frameworks like Struts, and a proven ability to contribute to critical application migration projects, transitioning older systems to modern, scalable architectures. Beyond the code, I am a firm believer in collaborative development, continuous learning, and delivering tangible business value.</p>
+                    <p class="mt-4">I am eager to contribute my expertise to a product-driven company where innovation, system reliability, and user impact are at the forefront. My goal is to build software that not only meets technical requirements but also genuinely solves user problems and drives business success.</p>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="py-12">
+        <section id="achievements" class="section-padding fade-in-section" style="--delay: 0.2s;">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Key Achievements</h2>
+            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">Driving tangible results and measurable improvements through technology.</p>
+            <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                    <p class="text-4xl font-bold text-[#3498DB]">30%</p>
+                    <p class="mt-2 text-gray-700">Decrease in Downtime</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                    <p class="text-4xl font-bold text-[#3498DB]">40%</p>
+                    <p class="mt-2 text-gray-700">Faster Deployments</p>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                    <p class="text-4xl font-bold text-[#3498DB]">25%</p>
+                    <p class="mt-2 text-gray-700">Fewer Post-Release Bugs</p>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105">
+                    <p class="text-4xl font-bold text-[#3498DB]">20%</p>
+                    <p class="mt-2 text-gray-700">Faster Feature Delivery</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-padding fade-in-section" style="--delay: 0.4s;">
             <h2 class="text-3xl font-bold text-center text-gray-800">Career Timeline</h2>
              <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">A journey of growth, contribution, and technical leadership.</p>
             <div class="mt-10 md:flex md:space-x-12">
                 <div class="md:w-1/3">
                     <ul id="timeline-tabs" class="space-y-4">
                         <li>
-                            <button data-target="job-1" class="w-full text-left p-4 font-semibold border-l-4 transition-colors duration-300 active-tab">Java Developer @ State of Minnesota</button>
+                            <button data-target="job-1" class="w-full text-left p-4 font-semibold border-l-4 border-[#3498DB] text-[#3498DB] transition-colors duration-300 shadow-md hover:shadow-lg rounded-r-xl">Software Engineer @ State of Minnesota</button>
                         </li>
                         <li>
-                            <button data-target="job-2" class="w-full text-left p-4 font-semibold border-l-4 border-gray-200 hover:border-[#E07A5F] hover:text-[#E07A5F] transition-colors duration-300">DevOps Intern @ Xperts Info Tech</button>
+                            <button data-target="job-2" class="w-full text-left p-4 font-semibold border-l-4 border-gray-200 hover:border-[#3498DB] hover:text-[#3498DB] transition-colors duration-300 shadow-md hover:shadow-lg rounded-r-xl">DevOps Intern @ XpertsInfoTech Inc.</button>
                         </li>
                     </ul>
                 </div>
-                <div class="md:w-2/3 mt-8 md:mt-0">
+                <div class="md:w-2/3 mt-8 md:mt-0 bg-white p-8 rounded-xl shadow-lg">
                     <div id="job-1" class="timeline-content space-y-3 text-gray-700"></div>
                     <div id="job-2" class="timeline-content hidden space-y-3 text-gray-700"></div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-12">
+        <section id="skills" class="section-padding fade-in-section" style="--delay: 0.6s;">
             <h2 class="text-3xl font-bold text-center text-gray-800">Technical Skills</h2>
             <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">A versatile skill set for building modern, robust software.</p>
-            <div class="mt-10 chart-container">
+            <div class="mt-10 chart-container bg-white p-6 rounded-xl shadow-lg">
                 <canvas id="skillsChart"></canvas>
             </div>
         </section>
 
-        <section id="projects" class="py-12">
+        <section id="projects" class="section-padding fade-in-section" style="--delay: 0.8s;">
             <h2 class="text-3xl font-bold text-center text-gray-800">Projects Portfolio</h2>
             <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">Demonstrating practical application of skills through impactful projects.</p>
             <div id="project-list" class="mt-10 grid md:grid-cols-2 gap-8">
             </div>
         </section>
 
-        <section id="education" class="py-12">
+        <section id="education" class="section-padding fade-in-section" style="--delay: 1s;">
              <h2 class="text-3xl font-bold text-center text-gray-800">Education</h2>
-             <div class="mt-8 max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-sm text-center">
+             <div class="mt-8 max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg text-center">
                  <h3 class="text-xl font-bold text-gray-800">Master of Science, Computer Science</h3>
-                 <p class="text-gray-600">University of Central Missouri, Graduated: May 2023</p>
-                 <hr class="my-4">
+                 <p class="text-gray-600">University of Cental Missouri, Graduated: May 2023</p>
+                 <hr class="my-4 border-gray-200">
                  <h3 class="text-xl font-bold text-gray-800">Bachelor of Science, Computer Science</h3>
-                 <p class="text-gray-600">Sri Padmavati Mahila Visvavidyalayam, Graduated: May 2021</p>
+                 <p class="text-gray-600">Sri Padmavati Mahila Visvavidyalayam, Graduated: July 2021</p>
              </div>
+        </section>
+
+        <section id="contact" class="section-padding fade-in-section" style="--delay: 1.2s;">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Get In Touch</h2>
+            <p class="text-center mt-2 text-gray-600 max-w-2xl mx-auto">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <div class="mt-10 max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg text-center flex flex-col items-center space-y-4">
+                <a href="mailto:kaddalapudi@gmail.com" class="text-lg text-gray-700 flex items-center hover:text-[#3498DB] transition duration-300">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    kaddalapudi@gmail.com
+                </a>
+                <a href="tel:+16088677393" class="text-lg text-gray-700 flex items-center hover:text-[#3498DB] transition duration-300">
+                    <span class="mr-2">&#9742;</span> (608) 867-7393
+                </a>
+                <a href="https://linkedin.com/in/akavyaa" target="_blank" rel="noopener noreferrer" class="text-gray-700 flex items-center hover:text-[#3498DB] transition duration-300">
+                     <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-2.08-1.55-2.08-.95 0-1.45.68-1.45 2.08V19h-3v-9h2.8v1.32h.04c.4-.7 1.35-1.32 2.96-1.32 3.17 0 3.96 2.08 3.96 4.79z"/></svg>
+                     LinkedIn Profile
+                </a>
+                <a href="https://github.com/kavya4630" target="_blank" rel="noopener noreferrer" class="text-gray-700 flex items-center hover:text-[#3498DB] transition duration-300">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    GitHub Profile
+                </a>
+            </div>
         </section>
 
     </main>
@@ -151,22 +242,24 @@
             experience: [
                 {
                     id: 'job-1',
-                    title: 'Java Developer @ State of Minnesota',
+                    title: 'Software Engineer @ State of Minnesota',
                     period: 'July 2023 – Present',
                     details: [
-                        'Engineered and optimized mission-critical, enterprise-level Java applications, significantly boosting overall system efficiency by 15-20% through code refactoring and algorithm optimization.',
-                        'Designed and implemented highly scalable RESTful APIs for microservices communication and external integrations, enhancing data exchange efficiency by 35% and processing large volumes of data seamlessly.',
-                        'Spearheaded full-stack development initiatives, building robust backend services with Java and Spring Boot, and crafting intuitive, responsive frontend interfaces using JavaScript, HTML, and CSS, which directly improved user engagement by 10-15%.',
+                        'Engineered and optimized mission-critical, enterprise-level Java applications, significantly boosting overall system efficiency by 40% through code refactoring and algorithm optimization.',
+                        'Designed and implemented highly scalable RESTful APIs for microservices communication and external integrations, enhancing data exchange efficiency by 25% and processing large volumes of data seamlessly.',
+						'Actively participated in and contributed to application migration projects, transitioning older systems to modern Java and Spring Boot architectures, improving scalability and maintainability.',
+                        'Spearheaded full-stack development initiatives, building robust backend services with Java and Spring Boot, and crafting intuitive, responsive frontend interfaces using JavaScript, HTML, and CSS, which directly improved user engagement by 15%.',
                         'Architected and implemented robust content management solutions leveraging FileNet, streamlining document storage, retrieval, and automating critical business processes for improved operational efficiency by 20%.',
                         'Developed and maintained secure, enterprise-wide user authentication and authorization mechanisms via LDAP, significantly strengthening application security posture and simplifying access controls, reducing authentication time by 15%.',
-                        'Led rigorous code review sessions, enforcing architectural standards, promoting best practices, and actively mentoring junior developers, which contributed to elevating overall code quality and maintainability and reducing post-release bugs by 25%.',
+                        'Led rigorous code review sessions, enforcing architectural standards, promoting best practices, and actively mentoring junior developers, which contributed to elevating overall code quality and maintainability and reducing post-release bugs by 35%.',
                         'Drove Agile methodologies (Scrum/Kanban) adoption, actively participating in daily stand-ups, sprint planning, and retrospectives, facilitating rapid iteration and consistently delivering incremental value, increasing team velocity by 15%.',
-                        'Conducted in-depth root cause analysis and resolved complex technical issues in critical production systems, proactively optimizing application performance and ensuring system stability, which decreased downtime by 30%.'
+                        'Conducted in-depth root cause analysis and resolved complex technical issues in critical production systems, proactively optimizing application performance and ensuring system stability, which decreased downtime by 30%.',
+                        'Successfully maintained and enhanced legacy applications built on the Struts framework, ensuring continued functionality and stability while planning for future upgrades.'
                     ]
                 },
                 {
                     id: 'job-2',
-                    title: 'DevOps Intern @ Previous Company',
+                    title: 'DevOps Intern @ XpertsInfoTech Inc.',
                     period: 'Jan 2023 – May 2023',
                     details: [
                         'Automated and optimized CI/CD pipelines using tools like Jenkins, significantly contributing to faster and more reliable software build, testing, and deployment processes, slashing deployment time by 40%.',
@@ -258,13 +351,13 @@
 
             resumeData.projects.forEach((project, index) => {
                 const projectCard = document.createElement('div');
-                projectCard.className = 'bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col';
+                projectCard.className = 'bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1';
                 projectCard.innerHTML = `
                     <h3 class="text-xl font-bold text-gray-800">${project.title}</h3>
                     <div class="prose prose-sm text-gray-600 mt-2 flex-grow">
                         ${project.content.split('</p>')[0] + '</p>'}
                     </div>
-                    <button data-index="${index}" class="mt-4 self-start text-[#E07A5F] font-semibold hover:underline">View Details →</button>
+                    <button data-index="${index}" class="mt-4 self-start text-[#3498DB] font-semibold hover:underline">View Details →</button>
                 `;
                 projectList.appendChild(projectCard);
             });
@@ -295,12 +388,12 @@
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Java & Spring Boot', 'Databases (SQL)', 'Web Tech (APIs, JS)', 'DevOps (CI/CD, Docker)', 'FileNet & LDAP'],
+                    labels: ['Backend Dev (Java, Spring Boot)', 'Databases (SQL)', 'Frontend Dev (APIs, JS)', 'DevOps (CI/CD, Docker)', 'FileNet & LDAP', 'Legacy Systems (Struts)'],
                     datasets: [{
                         label: 'Proficiency',
-                        data: [95, 85, 90, 80, 88],
-                        backgroundColor: 'rgba(224, 122, 95, 0.6)',
-                        borderColor: 'rgba(224, 122, 95, 1)',
+                        data: [95, 85, 90, 80, 88, 75],
+                        backgroundColor: 'rgba(52, 152, 219, 0.6)', /* Using Professional Blue */
+                        borderColor: 'rgba(52, 152, 219, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -329,6 +422,37 @@
                         }
                     }
                 }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Intersection Observer for fade-in animations
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
 
         });
